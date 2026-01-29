@@ -33,7 +33,7 @@ const Carousel = () => {
     <img
       src={slider1}
       className="d-block w-100"
-      style={{ height: "600px", objectFit: "cover" }}
+      style={{ height: "700px", objectFit: "cover" }}
       alt="Food 1"
     />
     
@@ -55,7 +55,7 @@ const Carousel = () => {
     <img
       src={slider2}
       className="d-block w-100"
-      style={{ height: "600px", objectFit: "cover" }}
+      style={{ height: "700px", objectFit: "cover" }}
       alt="Food 1"
     />
     
@@ -76,7 +76,7 @@ const Carousel = () => {
     <img
       src={slider3}
       className="d-block w-100"
-      style={{ height: "600px", objectFit: "cover" }}
+      style={{ height: "700px", objectFit: "cover" }}
       alt="Food 1"
     />
     

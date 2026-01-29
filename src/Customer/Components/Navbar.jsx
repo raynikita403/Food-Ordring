@@ -1,26 +1,35 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link as ScrollLink, scroller } from "react-scroll";
 import logo from "../../assets/nav-logo.png";
 
 const Navbar = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scroller.scrollTo("contact-us", {
+          smooth: true,
+          duration: 500,
+        });
+      }, 300);
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark text-light shadow-sm">
       <div className="container">
 
+        {/* Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img
-            src={logo}
-            alt="Foodly"
-            width="40"
-            height="40"
-            className="me-2"
-          />
+          <img src={logo} alt="Foodly" width="40" height="40" className="me-2" />
           <span className="fw-bold text-light">Foodly</span>
         </Link>
 
-        {/* Toggle button (mobile) */}
+        {/* Mobile Toggle */}
         <button
           className="navbar-toggler"
           type="button"
@@ -38,14 +47,38 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link fw-semibold text-light" to="/">Home</Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link fw-semibold text-light" to="/about">About Us</Link>
+              <Link className="nav-link fw-semibold text-light" to="/about">
+                About Us
+              </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link fw-semibold text-light" to="/restaurant">Restaurant</Link>
+              <Link className="nav-link fw-semibold text-light" to="/restaurant">
+                Restaurant
+              </Link>
             </li>
+
+            {/* Contact Us – Scroll */}
             <li className="nav-item">
-              <Link className="nav-link fw-semibold text-light" to="/contact">Contact Us</Link>
+              {location.pathname === "/" ? (
+                <ScrollLink
+                  to="contact-us"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link fw-semibold text-light cursor-pointer"
+                >
+                  Contact Us
+                </ScrollLink>
+              ) : (
+                <span
+                  className="nav-link fw-semibold text-light cursor-pointer"
+                  onClick={handleContactClick}
+                >
+                  Contact Us
+                </span>
+              )}
             </li>
           </ul>
 
@@ -53,7 +86,6 @@ const Navbar = () => {
           <div className="d-flex align-items-center gap-3">
             <i className="bi bi-search fs-5 cursor-pointer"></i>
 
-            {/* Profile Icon navigates to Login */}
             <i
               className="bi bi-person fs-5 cursor-pointer"
               onClick={() => navigate("/login")}
@@ -61,7 +93,6 @@ const Navbar = () => {
 
             <i className="bi bi-cart fs-5 cursor-pointer"></i>
           </div>
-
         </div>
       </div>
     </nav>

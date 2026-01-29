@@ -8,6 +8,7 @@ import AboutUsSection from "../Components/about-us";
 import Footer from "../Components/footer";
 
 import pizza from "../../assets/about-section.avif";
+import ContactUs from "../Components/contactUs";
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ customers who trust us for their daily cravings and special occasions.`}
       />
 
       <RestaurantsSection />
+      <ContactUs/>
       <Footer />
     </>
   );

@@ -26,4 +26,35 @@
 .what-we-do .bg-secondary {
   background-color: #495057 !important; 
 }
+/*--------------Mission Section---------- */
+.mission-section {
+  height: 600px; 
+  background: url('../assets/about-page/about-mission.avif') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Transparent overlay */
+.overlay {
+  top: 0;
+  left: 0;
+  background: rgba(255, 0, 0, 0.3); 
+  pointer-events: none;
+}
+
+/* Content box overlapping bottom */
+.content-box {
+  background: #fff;
+  margin-bottom: -50px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.box-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+}
 

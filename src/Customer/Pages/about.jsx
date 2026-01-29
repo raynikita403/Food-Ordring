@@ -7,6 +7,8 @@ import WhatWeDo from "../Components/about-what-we-do";
 import AboutUsSection from "../Components/about-us";
 
 import pizza from "../../assets/about-section.avif";
+import MissionSection from "../Components/about-mission";
+import ManagementTeam from "../Components/about-management-team";
 
 const About = () => {
   return (
@@ -14,7 +16,6 @@ const About = () => {
       <Navbar />
       <AboutBanner />
       <WhatWeDo />
-
       <AboutUsSection
         title="Our Story"
         text1={`Foodly was founded with a simple mission: to bring delicious, high-quality meals to your doorstep quickly 
@@ -37,6 +38,8 @@ delicious meals right to your door.
         bgColor="bg-dark"
         showButton={false} 
       />
+      <MissionSection/>
+      <ManagementTeam/>
 <Footer />
     </>
   );
